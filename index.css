@@ -1,0 +1,70 @@
+body {
+  margin-left: auto;
+  margin-right: auto;
+  animation-name: fondo;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+.texto{
+  font-family: "Courier New", Courier, monospace;
+  position: relative;
+  color: rgb(204, 94, 112);
+  text-align: center;
+  margin: auto;
+  transform: translateY(33vh);
+}
+.corazon {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: pink;
+  height: 250px;
+  width: 250px;
+  transform: rotate(-45deg);
+  animation-name: latido;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+.corazon::before {
+  background-color: pink;
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  height: 250px;
+  width: 250px;
+  top: -125px;
+  left: 0px;
+}
+
+.corazon::after {
+  background-color: pink;
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  top: 0px;
+  left: 125px;
+}
+
+@keyframes latido {
+  0% {
+    transform: scale(1) rotate(-45deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.6) rotate(-45deg);
+    opacity: 0.1;
+  }
+}
+
+@keyframes fondo {
+  50% {
+    background: #ffe6f2;
+  }
+}
